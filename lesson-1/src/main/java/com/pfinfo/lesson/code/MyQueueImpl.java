@@ -9,6 +9,7 @@ import com.pfinfo.lesson.one.Queue;
  */
 public class MyQueueImpl<T> implements Queue<T>{
 	
+	
 	/**
 	 * {@inheritDoc}
 	 */
