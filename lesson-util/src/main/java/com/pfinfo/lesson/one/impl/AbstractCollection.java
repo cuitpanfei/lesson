@@ -56,6 +56,7 @@ public abstract class AbstractCollection<E> implements MyCollection<E> {
 		MyIterator<E> it = iterator();
         while (it.hasNext()) {
             it.next();
+            it.remove();
         }
 	}
 

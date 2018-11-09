@@ -12,14 +12,14 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements M
 	/**
 	 * Default initial capacity.
 	 */
-	private static final int DEFAULT_CAPACITY = 10;
+	protected static final int DEFAULT_CAPACITY = 10;
 
 	/**
 	 * Shared empty array instance used for default sized empty instances. We
 	 * distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
 	 * first element is added.
 	 */
-	private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+	protected static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
 
 	/**
 	 * The array buffer into which the elements of the ArrayList are stored. The
@@ -35,7 +35,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements M
 	 *
 	 * @serial
 	 */
-	private int size;
+	protected int size;
 
 	/**
 	 * The number of times this list has been <i>structurally modified</i>.
@@ -70,22 +70,11 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements M
 	 * in an array. Attempts to allocate larger arrays may result in
 	 * OutOfMemoryError: Requested array size exceeds VM limit
 	 */
-	private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
+	protected static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
 	@Override
 	public int size() {
 		return size;
-	}
-
-	@Override
-	public void clear() {
-		modCount++;
-
-		// clear to let GC do its work
-		for (int i = 0; i < size; i++)
-			elementData[i] = null;
-
-		size = 0;
 	}
 
 	@Override
@@ -311,31 +300,4 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements M
         }
     }
 
-
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof MyList))
-            return false;
-
-        MyIterator<E> e1 = iterator();
-        MyIterator<?> e2 = ((MyList<?>) o).iterator();
-        while (e1.hasNext() && e2.hasNext()) {
-            E o1 = e1.next();
-            Object o2 = e2.next();
-            if (!(o1==null ? o2==null : o1.equals(o2)))
-                return false;
-        }
-        return !(e1.hasNext() || e2.hasNext());
-    }
-
-    public int hashCode() {
-        int hashCode = 1;
-        MyIterator<E> myIterator = iterator();
-        while(myIterator.hasNext()){
-        	E e = myIterator.next();
-        	hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
-        }
-        return hashCode;
-    }
 }
