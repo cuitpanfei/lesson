@@ -18,6 +18,10 @@
 		<module>lesson-1</module>
 		<module>lesson-util</module>
 		<module>lesson-http</module>
+		<module>lesson-2</module>
+		<module>lesson-3</module>
+		<module>lesson-4</module>
+		<module>lesson-5</module>
 	</modules>
 
 	<dependencies>

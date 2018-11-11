@@ -37,4 +37,9 @@ public interface MyList<E> extends MyCollection<E> {
      *         (<tt>index &lt; 0 || index &gt;= size()</tt>)
      */
     E set(int index, E element);
+    
+    /**
+     * {@inheritDoc}}
+     */
+//    void clear();
 }

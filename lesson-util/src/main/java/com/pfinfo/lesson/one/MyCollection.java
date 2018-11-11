@@ -26,7 +26,9 @@ public interface MyCollection<E> extends MyIterable<E>{
      *
      * @throws UnsupportedOperationException 如果此集合不支持<tt>clear</tt>操作，抛出异常
      */
-    void clear();
+    default void clear(){
+    	throw new UnsupportedOperationException("clear");
+    }
     
     /**
      * Returns <tt>true</tt> if this collection contains no elements.
@@ -52,7 +54,9 @@ public interface MyCollection<E> extends MyIterable<E>{
      * @throws IllegalArgumentException 如果元素的某个属性阻止它被添加到集合中
      * @throws IllegalStateException 如果处在插入限制，此时不能添加元素
      */
-    boolean add(E e);
+    default boolean add(E e){
+    	throw new UnsupportedOperationException("add");
+    }
     
     /**
      * 如果存在,从集合中移除指定元素的单个实例(可选操作)。
@@ -65,6 +69,8 @@ public interface MyCollection<E> extends MyIterable<E>{
      * @throws NullPointerException 如果指定元素为<tt>null<tt>并且且此集合不允许空元素
      * @throws UnsupportedOperationException 如果这个集合不支持<tt>remove</tt>操作 
      */
-    boolean del(Object o);
+    default boolean del(Object o){
+    	throw new UnsupportedOperationException("del");
+    }
 
 }
