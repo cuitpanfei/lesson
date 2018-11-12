@@ -31,9 +31,12 @@ public class TerminalOnlineOffline {
 		String id = "";
 		//2. get id from JSON
 		//TODO jsonStr to JSON
-		
-		//3. 消费
-		consumer.accept(id);
+		boolean isourTerminal = false; 
+		//TODO check id
+		if(isourTerminal){
+			//3. 消费
+			consumer.accept(id);
+		}
 	}
 	
 }
