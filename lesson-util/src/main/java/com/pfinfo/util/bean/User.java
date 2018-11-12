@@ -16,6 +16,17 @@ public class User implements Serializable{
 	private String userPasswd;
 	
 	private String description;
+	
+	public User(){
+		
+	}
+
+	public User(Integer id, String userName, String userPasswd) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.userPasswd = userPasswd;
+	}
 
 	public Integer getId() {
 		return id;
@@ -47,5 +58,11 @@ public class User implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ",\tuserName=" + userName + ",\tuserPasswd="
+				+ userPasswd + ",\tdescription=" + description + "]";
 	}
 }
